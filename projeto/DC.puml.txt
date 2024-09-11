@@ -1,0 +1,78 @@
+@startuml
+
+class Veiculo{
+   -matricula
+   -ano
+   -marca
+   -modelo
+   -placa
+   -status
+   +alugar()
+   +vincularProprietario()
+}
+
+class Usuario{
+   -email
+   -senha
+}
+
+class Cliente{
+   -cpf
+   -rg
+   -nome
+   -endereco
+   -profissao
+   +inserirPedido()
+   +alterarPedido()
+   +consultarPedido()
+   +cancelarPedido()
+
+}
+
+class Agente{
+   -cnpj
+   -nome
+   -endereco
+   +analisarPedido()
+   +modificarPedido()
+   +avaliarPedido()
+}
+
+class Pedido{
+   -idCliente
+   -idAgente
+   -idVeiculo
+   -status
+   -consideracoes
+   +analisar()  
+   +inserirConsideracao() 
+   +executarContrato(this)
+}
+
+class Analise{
+  -idPedido
+  -parecer
+  -status
+}
+
+class ContratoAluguel{
+   -idPedido
+   -valor
+   -duracao
+   -tipo
+}
+
+class ContratoCredito{
+   -idContratoAluguel
+}
+
+Pedido -- ContratoAluguel : <<Association>>
+Pedido -- Veiculo : <<Association>>
+Pedido -- Agente : <<Association>>
+Pedido -- Cliente : <<Association>>
+Pedido -- ContratoCredito : <<Association>>
+
+Usuario --|> Agente 
+Usuario --|> Cliente
+
+@enduml
