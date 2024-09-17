@@ -1,0 +1,44 @@
+@startuml
+package "Usuários" {
+  class Cliente
+  class Agente
+}
+
+package "Pedidos" {
+  class Pedido
+}
+
+package "Contratos" {
+  class Contrato
+  class AnaliseFinanceira
+  class OpcaoCompra
+}
+
+package "Veículos" {
+  class Veiculo
+}
+
+package "Segurança" {
+  class Autenticacao
+  class Autorizacao
+}
+
+package "BD" {
+  class UsuarioDB
+  class PedidoDB
+  class VeiculoDB
+  class ContratoDB
+}
+
+' Relações entre pacotes
+Usuários -right-> Pedidos : "Gerencia"
+Pedidos -down-> Contratos : "Solicita análise"
+Contratos -down-> Veículos : "Associa veículo"
+Contratos -left-> Segurança : "Valida"
+Usuários -> Segurança : "Autentica"
+Segurança -right-> BD : "Gerencia dados"
+Pedidos -> BD : "Armazena pedidos"
+Contratos -> BD : "Armazena contratos"
+Veículos -> BD : "Armazena veículos"
+
+@enduml
