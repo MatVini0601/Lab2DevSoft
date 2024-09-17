@@ -44,7 +44,7 @@ class Pedido{
    -idVeiculo
    -status
    -consideracoes
-   +analisar()  
+   +analisar(Analise)  
    +inserirConsideracao() 
    +executarContrato(this)
 }
@@ -53,6 +53,7 @@ class Analise{
   -idPedido
   -parecer
   -status
+  +realizarAnalise()
 }
 
 class ContratoAluguel{
@@ -64,6 +65,7 @@ class ContratoAluguel{
 
 class ContratoCredito{
    -idContratoAluguel
+   -idAgente
 }
 
 Pedido -- ContratoAluguel : <<Association>>
@@ -71,6 +73,10 @@ Pedido -- Veiculo : <<Association>>
 Pedido -- Agente : <<Association>>
 Pedido -- Cliente : <<Association>>
 Pedido -- ContratoCredito : <<Association>>
+
+Pedido -- Analise: <<Association>>
+
+Agente -- ContratoCredito : <<Association>>
 
 Usuario --|> Agente 
 Usuario --|> Cliente
