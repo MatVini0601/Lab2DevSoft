@@ -1,0 +1,44 @@
+@startuml
+
+actor Cliente
+actor Agente
+actor SistemaCentral
+actor Administrador
+
+usecase "Cadastro no Sistema" as Cadastro
+usecase "Introduzir Pedido" as Introduzir
+usecase "Modificar Pedido" as ModificarPedido
+usecase "Consultar Pedido" as ConsultarPedido
+usecase "Cancelar Pedido" as CancelarPedido
+usecase "Analisar Pedido Financeiro" as AnalisarFinanceiro
+usecase "Aprovar Pedido" as AprovarPedido
+usecase "Executar Contrato" as ExecutarContrato
+usecase "Gerir Contrato" as GerirContrato
+usecase "Gerir Veículo" as GerirVeiculo
+usecase "Associar Contrato de Crédito" as AssociarCredito
+usecase "Emitir Documento de Propriedade" as EmitirPropriedade
+usecase "Gerir Páginas Web Dinâmicas" as GerirPaginas
+usecase "Manter Sistema" as ManterSistema
+
+Cliente --> Cadastro
+Cliente --> Introduzir
+Cliente --> ModificarPedido
+Cliente --> ConsultarPedido
+Cliente --> CancelarPedido
+
+Agente --> AnalisarFinanceiro
+Agente --> AprovarPedido
+Agente --> GerirContrato
+Agente --> GerirVeiculo
+Agente --> AssociarCredito
+
+SistemaCentral --> ExecutarContrato
+SistemaCentral --> GerirPaginas
+
+Administrador --> ManterSistema
+
+AnalisarFinanceiro --> AprovarPedido : <<include>>
+AprovarPedido --> ExecutarContrato : <<include>>
+ExecutarContrato --> EmitirPropriedade : <<extend>>
+
+@enduml
