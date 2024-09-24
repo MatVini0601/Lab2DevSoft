@@ -1,0 +1,29 @@
+@startuml
+
+package "Camada de Apresentação" {
+    [Cliente] --( [ControladorWeb]
+    [Agente] --( [ControladorWeb]
+    [Administrador] --( [ControladorWeb]
+}
+
+package "Camada de Negócio" {
+    [ControladorWeb] --( [ServiçoPedido]
+    [ControladorWeb] --( [ServiçoCliente]
+    [ControladorWeb] --( [ServiçoContrato]
+    [ServiçoPedido] --( [RepositórioPedido]
+    [ServiçoCliente] --( [RepositórioCliente]
+    [ServiçoContrato] --( [RepositórioContrato]
+}
+
+package "Camada de Persistência" {
+    [RepositórioPedido] --( [Banco de Dados MySQL]
+    [RepositórioCliente] --( [Banco de Dados MySQL]
+    [RepositórioContrato] --( [Banco de Dados MySQL]
+}
+
+package "Sistema Externo" {
+    [ServiçoFinanceiro] --( [ServiçoPedido] : "Verificação Crédito"
+    [ServiçoVeicular] --( [ServiçoContrato] : "Gerenciar Veículos"
+}
+
+@enduml
