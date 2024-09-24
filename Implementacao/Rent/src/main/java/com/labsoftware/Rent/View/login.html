@@ -3,19 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
+  
 </head>
 <body>
-    <label for="">email</label>
-    <input type="email" id="caduser_email">
+    <div class="container">
+        <label for="caduser_email">email</label>
+        <input type="email" id="caduser_email">
 
-    <br>
-    <label for="">senha</label>
-    <input type="password" id="caduser_senha">
-    <br>
-    <button onclick="fetchUser()">Logar</button>
+        <label for="caduser_senha">senha</label>
+        <input type="password" id="caduser_senha">
+
+        <button onclick="fetchUser()">Logar</button>
+    </div>
+
+    <script src="../scripts/usuario.js"></script>
 </body>
 </html>
-
-<script src="../scripts/usuario.js">
-</script>
