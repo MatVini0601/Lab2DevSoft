@@ -99,7 +99,7 @@ function cadastrarCliente(){
             body: JSON.stringify(dataCliente)
           }).then(res => {
             if(res.status === 201){
-                window.location.href = "/login"
+                window.location.href = "/src/main/java/com/labsoftware/Rent/View/login.html"
             }
         })
     });
