@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+    <label>Data de início</label>
+    <input type="date" id="dataInicio">
+    <br>
+    <label>Duração</label>
+    <select name="" id="duracao">
+        <option value="12">12 meses</option>
+        <option value="24">24 meses</option>
+        <option value="36">36 meses</option>
+        <option value="48">48 meses</option>
+    </select>
+    <br>
+    <label>Opção de compra</label>
+    <select name="" id="opcaoCompra">
+        <option value="true">Sim</option>
+        <option value="false">Não</option>
+    </select>
+    <br>
+    <label>Status</label>
+    <select name="" id="status">
+        <option value="true">Aprovado</option>
+        <option value="false">Negado</option>
+    </select>
+    <br>
+    <label>Veículo</label>
+    <select name="" id="veiculo">
+
+    </select>
+    <br>
+    <button onclick="atualizarPedido()">Alterar</button>
+</div>
+</body>
+</html>
+<script src="../scripts/pedido.js?V=1"></script>
+<script>getData()</script>

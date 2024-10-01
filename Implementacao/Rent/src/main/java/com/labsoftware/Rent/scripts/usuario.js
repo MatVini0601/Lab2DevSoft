@@ -40,7 +40,7 @@ function atualizarCadastro(){
             body: JSON.stringify(dataUsuario)
             }).then(res => {
                 alert("Cadastro atualizado com sucesso")
-                window.location.href = "login.html"
+                window.location.href = "/src/main/java/com/labsoftware/Rent/View/Menu.html"
         })
     }
 }
@@ -99,7 +99,7 @@ function cadastrarCliente(){
             body: JSON.stringify(dataCliente)
           }).then(res => {
             if(res.status === 201){
-                window.location.href = "/login"
+                window.location.href = "/src/main/java/com/labsoftware/Rent/View/Menu.html"
             }
         })
     });
@@ -117,7 +117,7 @@ function fetchUser(){
         if(senha === data.senha){
             localStorage.setItem("id", data.id)
 
-            let hrefOficina = window.location.href = `/src/main/java/com/labsoftware/Rent/View/alterarUsuario.html`
+            let hrefOficina = window.location.href = `/src/main/java/com/labsoftware/Rent/View/Menu.html`
 
             window.location.href = hrefOficina
         }else{

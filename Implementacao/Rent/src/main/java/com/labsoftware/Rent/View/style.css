@@ -20,12 +20,12 @@ body {
     max-width: 400px; 
 }
 
-label, input, button {
+label, input, button, select {
     margin: 5px 0; 
     width: 100%;
 }
 
-input {
+input, select {
     padding: 10px;
     border: 1px solid #ccc; 
     border-radius: 5px; 
